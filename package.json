@@ -1,0 +1,49 @@
+{
+  "name": "aiza-sc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.1",
+    "@openzeppelin/contracts-upgradeable": "^4.4.1",
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "abdk-libraries-solidity": "2.4.0",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.11",
+    "@openzeppelin/truffle-upgrades": "^1.8.0",
+    "@truffle/config": "^1.2.41",
+    "@truffle/provider": "^0.2.32",
+    "bignumber.js": "^9.0.1",
+    "graph-data-structure": "^2.0.0",
+    "ohm-js": "^15.5.0",
+    "shelljs": "^0.8.4",
+    "sol-merger": "^3.1.0",
+    "truffle": "^5.2.3",
+    "truffle-contract-size": "^2.0.1",
+    "truffle-export-abi": "^1.0.1",
+    "truffle-plugin-verify": "^0.5.15",
+    "yargs": "^17.0.1"
+  },
+  "scripts": {
+    "build": "truffle compile --all",
+    "postbuild": "node scripts/generate-ts-from-abis.js",
+    "test": "truffle test",
+    "deploy": "truffle migrate --reset"
+  },
+  "keywords": [
+    "AizaWorld",
+    "LoanToPlay",
+    "NFT",
+    "GameFi",
+    "DEFI",
+    "PlayToEarn"
+  ],
+  "author": "AizaOfficial",
+  "license": "MIT"
+}
