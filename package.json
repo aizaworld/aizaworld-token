@@ -27,7 +27,11 @@
     "truffle-contract-size": "^2.0.1",
     "truffle-export-abi": "^1.0.1",
     "truffle-plugin-verify": "^0.5.15",
-    "yargs": "^17.0.1"
+    "yargs": "^17.0.1",
+    "lodash.template": ">=4.5.0",
+    "marked": ">=4.0.10",
+    "follow-redirects": ">=1.14.7",
+    "axios": ">=0.21.2"
   },
   "scripts": {
     "build": "truffle compile --all",
