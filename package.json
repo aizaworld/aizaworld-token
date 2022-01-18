@@ -35,7 +35,8 @@
     "node-forge": ">=1.0.0",
     "yargs-parser": ">=13.1.2",
     "mem": ">=4.0.0",
-    "concat-stream": ">=1.5.2"
+    "concat-stream": ">=1.5.2",
+    "node-fetch": ">=2.6.1"
   },
   "scripts": {
     "build": "truffle compile --all",
