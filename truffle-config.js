@@ -2,7 +2,7 @@ require('dotenv').config();
 
 function hdWalletProviderOptions(privateKeyEnvVarValue, mnemonicPhraseEnvVarValue, otherOpts) {
   const opts = { ...otherOpts };
-  if(privateKeyEnvVarValue) {
+  if (privateKeyEnvVarValue) {
     opts.privateKeys = [privateKeyEnvVarValue];
   }
   else {
@@ -21,6 +21,20 @@ module.exports = {
       network_id: process.env.ETH_DEV_RPC_NETWORK_ID || '*',
       gas: parseInt(process.env.ETH_DEV_RPC_GAS, 10) || 67219750
     },
+    rinkeby: {
+      provider: () => new HDWalletProvider(hdWalletProviderOptions(
+        process.env.BINANCE_WALLET_PRIVATE_KEY,
+        process.env.BINANCE_WALLET_MNEMONIC,
+        {
+          providerOrUrl: `https://rinkeby.infura.io/v3/${process.env.INFURA_PROJECT_ID}`
+        }
+      )),
+      network_id: 4,       // Rinkeby's id
+      gas: 5500000,        // Rinkeby has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
     bsctestnet: {
       provider: () => new HDWalletProvider(hdWalletProviderOptions(
         process.env.BINANCE_WALLET_PRIVATE_KEY,
@@ -32,20 +46,15 @@ module.exports = {
       network_id: 0x61,
       confirmations: 10,
       timeoutBlocks: 200,
-      gas: 10000000,  // 8000000,
+      gas: 8000000,
       skipDryRun: true
     },
     bscmainnet: {
-      provider: () => new HDWalletProvider(hdWalletProviderOptions(
-        process.env.BINANCE_MAINNET_WALLET_PRIVATE_KEY,
-        process.env.BINANCE_MAINNET_WALLET_MNEMONIC,
-        {
-          providerOrUrl: 'https://bsc-dataseed.binance.org/'
-        }
-      )),
-      network_id: 0x38,
+      provider: () => new HDWalletProvider(process.env.BINANCE_MAINNET_WALLET_PRIVATE_KEY, `https://bsc-dataseed1.binance.org`),
+      network_id: 56,
       confirmations: 10,
       timeoutBlocks: 200,
+      networkCheckTimeout: 10000000,
       gas: 5600000,
       skipDryRun: true
     },
@@ -74,5 +83,6 @@ module.exports = {
   ],
   api_keys: {
     bscscan: process.env.BSCSCAN_API_KEY,
+    etherscan: process.env.ETHERSCAN_API_KEY,
   },
 };

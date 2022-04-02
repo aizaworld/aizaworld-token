@@ -12,8 +12,8 @@ export interface AizaWorldToken {
   name(): Web3JsAbiCall<string>;
   symbol(): Web3JsAbiCall<string>;
   totalSupply(): Web3JsAbiCall<string>;
-  transfer(recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
-  transferFrom(sender: string, recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transfer(to: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transferFrom(from: string, to: string, amount: string | number): Web3JsAbiCall<boolean>;
 }
 
 export interface Context {
@@ -26,10 +26,10 @@ export interface ERC20 {
   decimals(): Web3JsAbiCall<string>;
   totalSupply(): Web3JsAbiCall<string>;
   balanceOf(account: string): Web3JsAbiCall<string>;
-  transfer(recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transfer(to: string, amount: string | number): Web3JsAbiCall<boolean>;
   allowance(owner: string, spender: string): Web3JsAbiCall<string>;
   approve(spender: string, amount: string | number): Web3JsAbiCall<boolean>;
-  transferFrom(sender: string, recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transferFrom(from: string, to: string, amount: string | number): Web3JsAbiCall<boolean>;
   increaseAllowance(spender: string, addedValue: string | number): Web3JsAbiCall<boolean>;
   decreaseAllowance(spender: string, subtractedValue: string | number): Web3JsAbiCall<boolean>;
 }
@@ -44,8 +44,8 @@ export interface ERC20Burnable {
   name(): Web3JsAbiCall<string>;
   symbol(): Web3JsAbiCall<string>;
   totalSupply(): Web3JsAbiCall<string>;
-  transfer(recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
-  transferFrom(sender: string, recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transfer(to: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transferFrom(from: string, to: string, amount: string | number): Web3JsAbiCall<boolean>;
   burn(amount: string | number): Web3JsAbiCall<void>;
   burnFrom(account: string, amount: string | number): Web3JsAbiCall<void>;
 }
@@ -53,10 +53,10 @@ export interface ERC20Burnable {
 export interface IERC20 {
   totalSupply(): Web3JsAbiCall<string>;
   balanceOf(account: string): Web3JsAbiCall<string>;
-  transfer(recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transfer(to: string, amount: string | number): Web3JsAbiCall<boolean>;
   allowance(owner: string, spender: string): Web3JsAbiCall<string>;
   approve(spender: string, amount: string | number): Web3JsAbiCall<boolean>;
-  transferFrom(sender: string, recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transferFrom(from: string, to: string, amount: string | number): Web3JsAbiCall<boolean>;
 }
 
 export interface IERC20Metadata {
@@ -64,8 +64,8 @@ export interface IERC20Metadata {
   approve(spender: string, amount: string | number): Web3JsAbiCall<boolean>;
   balanceOf(account: string): Web3JsAbiCall<string>;
   totalSupply(): Web3JsAbiCall<string>;
-  transfer(recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
-  transferFrom(sender: string, recipient: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transfer(to: string, amount: string | number): Web3JsAbiCall<boolean>;
+  transferFrom(from: string, to: string, amount: string | number): Web3JsAbiCall<boolean>;
   name(): Web3JsAbiCall<string>;
   symbol(): Web3JsAbiCall<string>;
   decimals(): Web3JsAbiCall<string>;

@@ -1,0 +1,14 @@
+{
+  "build/contracts/AizaWorldToken.json": {
+    "events": {},
+    "links": {},
+    "address": "0x7bcf70e915448286A6579326B41211aC2811dC99",
+    "transactionHash": "0xb0bf1fee5fac7d2f1335424cb8595a90be70efe6005f2b3385ac403104368650"
+  },
+  "build/contracts/Migrations.json": {
+    "events": {},
+    "links": {},
+    "address": "0x52698cE4c19118B2Ae4E3C0ed611478225906eCc",
+    "transactionHash": "0x9c8c0037ab0a990be600e091eba62a7059244af42cb9fa36e57c7980028ee586"
+  }
+}

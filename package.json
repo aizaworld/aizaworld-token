@@ -20,6 +20,7 @@
     "@truffle/config": "^1.2.41",
     "@truffle/provider": "^0.2.32",
     "bignumber.js": "^9.0.1",
+    "graph-data-structure": "^2.0.0",
     "ohm-js": "^15.5.0",
     "shelljs": ">=0.8.5",
     "sol-merger": "^3.1.0",
@@ -42,7 +43,18 @@
     "build": "truffle compile --all",
     "postbuild": "node scripts/generate-ts-from-abis.js",
     "test": "truffle test",
-    "deploy": "truffle migrate --reset"
+    "deploy-dev": "truffle migrate --reset",
+    "deploy-testnet": "truffle migrate --reset --network bsctestnet",
+    "deploy-rinkeby": "truffle migrate --reset --network rinkeby",
+    "deploy": "truffle migrate --reset --network bscmainnet",
+    "backup-networks": "node scripts/manage-networks.js backup",
+    "postdeploy-testnet": "npm run backup-networks 97",
+    "postdeploy-rinkeby": "npm run backup-networks 4",
+    "postdeploy": "npm run backup-networks 56",
+    "sol-merger": "sol-merger \"./contracts/*.sol\" ./build/merged",
+    "verify-rinkeby": "truffle run verify --network rinkeby AizaWorldToken",
+    "verify-testnet": "truffle run verify --network bsctestnet AizaWorldToken",
+    "verify": "truffle run verify --network bscmainnet AizaWorldToken"
   },
   "keywords": [
     "AizaWorld",
